@@ -7,7 +7,14 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!src-tauri", "!routeTree.gen.ts"]
+		"includes": [
+			"**",
+			"!!**/src-tauri",
+			"!!**/src/routeTree.gen.ts",
+			"!!**/target",
+			"!!**/dist",
+			"!!**/build"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -16,7 +23,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"a11y": {
+				"useSemanticElements": "off"
+			}
 		}
 	},
 	"javascript": {
@@ -30,6 +40,13 @@
 			"source": {
 				"organizeImports": "on"
 			}
+		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": false,
+			"allowWrongLineComments": false,
+			"tailwindDirectives": true
 		}
 	}
 }
